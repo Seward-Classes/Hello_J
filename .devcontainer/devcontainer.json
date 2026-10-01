@@ -1,0 +1,27 @@
+{
+  "name": "J development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "formulahendry.code-runner"
+      ],
+      "settings": {
+        "code-runner.executorMapByFileExtension": {
+          ".ijs": "bash \"$workspaceRoot/.devcontainer/run-j.sh\" \"$fullFileName\""
+        },
+        "code-runner.runInTerminal": true,
+        "code-runner.saveFileBeforeRun": true,
+        "code-runner.showRunIconInEditorTitle": true
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup-vscode-extension.sh"
+}

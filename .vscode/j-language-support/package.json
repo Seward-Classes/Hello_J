@@ -1,0 +1,38 @@
+{
+  "name": "j-language-support",
+  "displayName": "J Language Support",
+  "description": "Syntax highlighting for J source files.",
+  "version": "1.0.0",
+  "publisher": "hello-j",
+  "files": [
+    "package.json",
+    "syntaxes/**"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "j",
+        "aliases": [
+          "J",
+          "j"
+        ],
+        "extensions": [
+          ".ijs"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "j",
+        "scopeName": "source.j",
+        "path": "./syntaxes/j.tmLanguage.json"
+      }
+    ]
+  }
+}

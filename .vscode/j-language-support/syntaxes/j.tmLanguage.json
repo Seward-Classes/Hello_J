@@ -1,0 +1,73 @@
+{
+  "scopeName": "source.j",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#controlWords"
+    },
+    {
+      "include": "#primitives"
+    },
+    {
+      "include": "#names"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.j",
+          "match": "NB\\..*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.j",
+          "match": "'(?:[^']|'')*'"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.j",
+          "match": "(?<![\\w.])_?\\d+(?:\\.\\d+)?(?:[eE]_?\\d+)?"
+        }
+      ]
+    },
+    "controlWords": {
+      "patterns": [
+        {
+          "name": "keyword.control.j",
+          "match": "\\b(?:if|do|else|end|while|for|select|case|try|catch|throw|return)\\."
+        }
+      ]
+    },
+    "primitives": {
+      "patterns": [
+        {
+          "name": "keyword.operator.j",
+          "match": "[+*/%#$_~|:.,;<>={}\\[\\]@&!?^`'-]"
+        }
+      ]
+    },
+    "names": {
+      "patterns": [
+        {
+          "name": "variable.other.j",
+          "match": "\\b[A-Za-z][A-Za-z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}
